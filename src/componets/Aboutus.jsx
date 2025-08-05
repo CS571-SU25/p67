@@ -1,14 +1,25 @@
-export default function AboutUs(){
-    return<>
-        <div className="about" style={{textAlign: "center"}}>
-        <h1>About Us</h1>
-        <p>The Black Men Collective was founded in Late May of 2024. The founding came as a
-             result of need for Black men on campus to have a space for community. At the time the only way as a black man to have community was to seek 
-             out other black men in black student orgs or join a fraternity. Our goal is to be that in between. As joining a frat can seem like a big commitment
-             and being apart of a student org can also be seen as a hassle. On campus we look to be the provider of resourses as can be seen as the events we
-             have hosted including Headshots and Haircuts. Our goal is to provide a comfortable space for black men to cultivate and grow at UW Madison.
+import RevealOnScroll from "./RevealOnScroll";
 
+
+export default function AboutUs() {
+  return (
+    <RevealOnScroll className="about-section">
+      <div className="about-inner">
+        <h1 className="about-title">About&nbsp;Us</h1>
+
+        <p className="about-text">
+          The <strong>Black Men Collective</strong> was founded in&nbsp;May&nbsp;2024 to create a
+          dedicated space for Black men on campus to build community. Rather than choosing between
+          a fraternity (a big commitment) or traditional student orgs (often a hassle), we aim to
+          be the supportive middle ground.
         </p>
-        </div>
-        </>
+
+        <p className="about-text">
+          From resource-driven events like <em>Headshots&nbsp;&amp;&nbsp;Haircuts</em> to mentorship
+          and networking, our mission is to provide a comfortable environment where Black men can
+          cultivate, grow, and thrive at&nbsp;UW-Madison.
+        </p>
+      </div>
+    </RevealOnScroll>
+  );
 }

@@ -1,14 +1,20 @@
-import { Card, Image } from "react-bootstrap"
+import { useEffect, useState } from "react"
+import { Image } from "react-bootstrap"
+
 export default function Eboard(props){
+    
     return <>
-            <h1> Meet the Ebord </h1>
-            <Card style={{margin:"auto", width:"fit-content", padding:"1em"}}>
-                <Image src = "" alt="picture of ebord member"/>
+
+      
+                <Image src={props.img} alt="picture of ebord member"  style={{height: "10em", width:"10em", objectFit: "contain" }}/>
+                
                 <h2>{props.name? props.name:"John Doe"}</h2>
+                <div style={{ fontSize: "0.85rem" }}>
                 <p>Position: {props.position}</p>
                 <p>Hometown: {props.hometown}</p>
                 <p>Major: {props.major}</p>
                 <p>{props.bio?props.bio:""}</p>  
-            </Card>
+                </div>
+          
             </>
 }

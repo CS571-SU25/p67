@@ -1,0 +1,325 @@
+ *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+    }
+:root {
+ 
+  --c1: #4b0019; 
+  --c2: #8b0b2c;   
+  --c3: #260308;   
+
+  
+  --accent: #ff4655;
+}
+    body {
+  padding-top: 56px;   
+}
+
+@media (max-width: 767.98px) {     
+  body {
+    padding-top: 64px;
+  }
+}
+.home{
+    padding-top: 100px;
+    background: url("img\IMG_0827.JPG");
+    align-items: center;
+    overflow: hidden;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    display: flexbox;
+    background-attachment: fixed;
+    align-items: center;
+}
+.footer {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    -60deg,
+    var(--c1),
+    var(--c2),
+    var(--c3)
+  );
+  background-size: 300% 300%;
+  animation: move-bg 18s ease-in-out infinite;
+  z-index: -3;
+}
+
+
+.footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 40px),
+    repeating-linear-gradient(-45deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 40px);
+  backdrop-filter: blur(2px);
+  z-index: -2;
+}
+
+
+.footer-heading,
+.media-icons {
+  position: relative;
+  z-index: 1;
+}
+
+
+.footer-heading {
+  font-size: clamp(1.8rem, 2vw + 1.2rem, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+
+.media-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.media-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 1.3rem;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.media-icons a:hover,
+.media-icons a:focus-visible {
+  background: var(--accent);
+  transform: translateY(-4px) scale(1.05);
+}
+
+
+@keyframes move-bg {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+
+@media (max-width: 575.98px) {
+  .media-icons a { width: 42px; height: 42px; font-size: 1.1rem; }
+  .footer-heading { font-size: 1.6rem; }
+}
+
+.faq-section {
+  max-width: 780px;         
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.faq-title {
+  font-size: clamp(1.75rem, 2vw + 1.2rem, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+
+.apple-faq .accordion-item {
+  border: none;              
+  border-bottom: 1px solid #d2d2d7;
+}
+
+.apple-faq .accordion-header {
+  margin: 0; padding: 1.25rem 0;
+}
+
+.apple-faq .accordion-button {
+  background: transparent;
+  box-shadow: none;          
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #1d1d1f;           
+  padding: 0;                
+  transition: color 0.2s ease;
+}
+
+
+.apple-faq .accordion-button:not(.collapsed):hover,
+.apple-faq .accordion-button:hover {
+  color: #06c;               
+}
+
+.apple-faq .accordion-button::after {
+  flex-shrink: 0;
+  width: 0.85rem;
+  height: 0.85rem;
+  margin-left: auto;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' xmlns='http://www.w3.org/2000/svg' fill='%231d1d1f'%3E%3Cpath d='M4.47 2.47a.75.75 0 011.06 0l3.999 4a.75.75 0 010 1.06l-4 4a.75.75 0 11-1.06-1.06L7.94 6 4.47 2.53a.75.75 0 010-1.06z'/%3E%3C/svg%3E");
+  background-size: contain;
+  transform: rotate(90deg); 
+  transition: transform 0.25s ease;
+}
+
+.apple-faq .accordion-button:not(.collapsed)::after {
+  transform: rotate(270deg); 
+}
+
+
+.apple-faq .accordion-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 0.5rem 0 1.5rem;
+  color: #515154;
+}
+
+
+.apple-faq .accordion-collapse {
+  border: none;
+}
+
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-section {
+  background: var(--bg-gradient);
+  padding: 8rem 1rem;               
+}
+
+.about-inner {
+  max-width: 760px;                 
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.about-title {
+  font-size: clamp(2.2rem, 2vw + 1.8rem, 3rem);
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  position: relative;
+  margin-bottom: 2.75rem;
+}
+
+
+.about-title::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  background: var(--accent);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+}
+
+
+.about-text strong { color: var(--text-dark); }
+.about-text em     { color: var(--accent);  }
+
+
+
+
+.interested-wrapper {
+  padding: 6rem 1rem;
+  background: #f8f9fa;         
+}
+
+.interested-card {
+  max-width: 720px;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+
+.interested-header {
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, #8b0b2c, #260308);
+  color: #fff;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+
+.interested-btn {
+  background: #4b0019;
+  border: none;
+  transition: background 0.25s ease;
+}
+.interested-btn:hover,
+.interested-btn:focus-visible {
+  background: #4b0019;
+}
+
+
+.form-floating > label {
+  color: #6c757d;
+}
+
+
+.event-wrapper {
+  padding: 6rem 1rem;
+  background: #f8f9fa;
+}
+
+
+.event-card {
+  max-width: 720px;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+
+.event-header {
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg,  #8b0b2c, #260308);
+  color: #fff;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.event-btn {
+  background: #4b0019;
+  border: none;
+  transition: background 0.25s ease;
+}
+.event-btn:hover,
+.event-btn:focus-visible {
+  background: #4b0019;
+}
+
+
+.form-floating > label {
+  color: #6c757d;
+}
